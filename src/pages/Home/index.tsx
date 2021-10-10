@@ -44,7 +44,9 @@ export const Home = () => {
   const [loading, setLoading] = useState(true);
 
   function handleSearchMovie() {
-    console.log(input);
+    if (input === '') return;
+    navigation.navigate('Search' as never, { name: input } as never);
+    setInput('');
   }
 
   useEffect(() => {
